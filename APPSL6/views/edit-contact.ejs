@@ -1,0 +1,56 @@
+<!-- ini menampilkan -->
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6">
+<!--form ubah data contact muncul setelah tombol edit  -->
+            <h2>form ubah data contact</h2>
+
+            <!-- ini mengecek error -->
+            <% if (typeof errors != 'undefined') { %>
+                <div class="alert alert-danger" role="alert">
+                    <!-- karena error dlm bentuk array of object maka harus dilooping -->
+                    <ul>
+                    <% errors.forEach(error => { %>
+
+                    <li><%= error.msg %></li> 
+                    <% }) %>
+                    </ul>
+                </div>
+            <% } %>
+
+
+            <!-- update.. route buat perubahan data -->
+            <form method="post" action="/contact/update">
+                <!-- ini hidden dari nama -->
+                <input type="hidden" name="oldNama" value="<%= contact.oldNama || contact.nama %>">
+                <!-- cara baca yg diatas .. kalau ada oldNama PAKAI oldNama kalau gak ada pakai nama sbagai nama barunya-->
+                <div class="mb-3">
+
+                <!-- NAMA -->
+
+                <label for="nama" class="form-label">nama</label>
+                <input type="type" class="form-control" id="nama" name="nama" required value="<%= contact.nama %>"/>
+                </div>
+
+                <!-- EMAIL -->
+
+                <label for="email" class="form-label">email</label>
+                <input type="email" class="form-control" id="email" name="email" required value="<%= contact.email %>"/>
+            </div>
+            
+            <!-- NOHP -->
+            
+            
+            <label for="nohp" class="form-label">no hp</label>
+            <input type="type" class="form-control" id="nohp" name="nohp" required value="<%= contact.nohp %>"/>
+            </div>
+                
+            <!-- tombol submit contact nya -->
+                <button type="submit" class="btn btn-primary"> ubah Submit contact</button>
+              </form>
+
+              
+        </div>
+    </div>
+</div>

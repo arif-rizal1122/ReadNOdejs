@@ -1,0 +1,171 @@
+
+
+### Pengenalan database management system ###
+
+1. DBMS adl aplikasi yg digunakan untuk management data
+2. tanpa management data(DBMS). untuk memenej data, seperti data product data costumer, data penjualan, kita harus simpan dalam bentuk file(misal seperti mengunakan excel)
+3. DBMS biasanya berjalan sebagai aplikasi server yg digunakan untuk me-menange data, kita hanya tinggal memberi perintah ke DBMS untuk melakukan prosses mangement datanya, seperti menambah, mengubah, menghapus, atau mengambil data 
+4. contoh DBMS yg populer seperti MySQL. MonggoDB. Oracle. dan lain-lain......
+5. ada banyak jenis DBMS, seperti relational database, document database, key-value database, dan lain-lain
+################################################################
+6. namun yg masih populer dan kebanyakan orang gunakan adlah relational database 
+7. relational database cukup mudah dimengerti dan dipelajari karena kita sudah terbiasa menyimpan data dalam bentuk tabular(tabel) seperti di microsoft excel atau di google doc spreadsheet
+8. selain itu relational database memiliki perintah standard mengunakan SQL sehinnga kita mudah ketika ingin berganti-ganti aplikasi database(seperi MySQL. Oracle. PostgresSQL DLL..) 
+(SQL: structur query languange)
+
+########### cara kerja DBMS ############
+
+                SQL
+database Client --> database mangement system --> database file
+
+
+================================================================
+
+DATABASE CLIENT???
+
+1. database client adalah aplikasi yg digunakan untuk berkomunikasi dengan DBMS
+2. Biasnya DBMS sudah menyediakan database client sesederhana yg bisa kita gunakan untuk berkomunakasi dengan DBMS agar lebih mudah 
+3. atau kita bisa membuat aplikasi untuk berkomunikasi dengan DBMS, misal membuat aplikasi database client mengiunakan node, java, php atau bahasa pemgrograman lainya.....
+
+DATABASE FILE???
+
+1. Mayoritas DBMS  menyimpan datanya di file, walaupun ada beberapa database yg hanya menyimpan datanya di memory(RAM)
+2. namun jangan berpikir file database yg disimpan berupa file seperi excel  atau CSV(commaSeparted Value), tapi jauh lebih kompleks
+3. dataase file akan dioptimasi oleh DBMS agar mempermudah DBMS dalam management datanya, seperti insert, update, delete, dan select
+4. tiap DBMS biasanya memiliki cara masing-masing mengelola database file-nya, dan kita perlu harus tau, karena yg kita perlu tehu hanya cara berkomunikasi ke DBMS 
+
+================================================================
+
+SQL??????????
+1. Structured Query Languange
+2. merupakan bahasa yg digunakan untuk mengirim perintah ke DBMS 
+3. SQL adalah bahsa yg mudah karena hanya berisi instruksi untuk menyimpan, mengubah, menghapus atau mengambil data melalui DBMS
+4. secara garis besar, semua perintah SQL di relational databse itu hampir sama. namun biasanya tiap DBMS ada improvement nya yg membedakan hal-hal kecil dalam perintah SQL. namun secara garis besar perintahnya tetap sama
+
+################################################################
+
+MySQL??????????
+
+1. MySQL adalah DBMS relational Open source yg paling populer didunia saat ini 
+2. tidak hanya open source. MySQL juga gratis untuk Digunakan 
+3. MySQL pertama kali dibuat dan diperkenalkan tahun 1995 oleh david axmark dan michel widenius
+4. MySQL Sangat populer sekali trutama dikalangan programmer web PHP.................................................... 
+
+MySQL community vs MySQL enterprise????????????
+
+1. saat kita memuaka halaman web resmi MySQL. jangan sampai salah download aplikasi MySQL 
+2. MySQL menawarkan pilihan versi MySQL enterprise yaitu DBMS MySQL yg Berbayar
+3. MySQL menawarkan pilihan versi gratis MySQL Community
+4. MySQL enterprise sendiri lebih ke versi improvment dari MySQL community. biasanya menambahkan support dan monitoring 
+5. jika mengunakan MySQL COMMUNITY. Maka kita harus tanggani semuanya sendiri. dari masalah monitoring MySQL nya
+
+MySQL VS MariaDB????????
+
+1. Tahun 2008 MySQL di akuisisi oleh perusahaan sun microsystem
+2. namun tahun 2009. sun microsystem diakuisisi oleh perusahaan Oracle(pemilik DBMS Oracle)
+3. hal ini menyebabkan 2 founder fork dari MySQL. Jadi apa yg bisa dilakukan di MySQL bisa dilakukan di MariaDB
+4. Sehingga sekarang jangan terlalu bingung jika ada MySQL dan MariaDB. KARENA sebenarnya itu dari source code yg sama. mungkin ada perbedaan kecil namun secara garis besar sebenarnya masih tetap sama..............................................
+
+
+<!-- instalization mysql -->
+
+=> MySQL adalah teknologinya sedangkan 
+=> PHP Admin adalah pengontrolanya
+
+
+==========================================================
+
+DATABASE???????????????????????
+
+1. DATABASE adalah tempat kita menyimpan table di MySQL
+2. jika kita misalkan table di MySQL  adl sebuah file. maka database adalah folder nya, dimana kita bisa menyimpan banyak table di sebuah database 
+3. biasanya pembuatan kita akan membuatsatu database untuk satu jenis aplikasi, walaupun satu aplikasi bisa mengunakan lebih dari satu database, namun lumrahnya satu aplikasi akan mengunakan satu database 
+
+
+===>>>>>> ini cara masuk di cmd nya========
+=> mengarah ke root = (utama)
+C:\Users\Bang Rizal>mysql -u root -p
+
+============================================================
+
+
+Membuat Databases!!!!!!!!!!!!!
+
+1. mengunakan huruf kecil(default)tanpa_spasi
+2. drop database tanpa_spasi (cara menghapus database)
+
+
+============================================================
+Tipe Data??????????
+
+1. saat kita membuat tabel di excel, kita bisa menentukan tipe data apa yg kita masukan ke tiap kolom excel 
+2. di MySQL. kita bisa juga menentukan tipe data tiap kolom yg kita buat di sebuah tabel
+3. ada banyak sekali tipe data yg tersedia di   MySQL. dari yg sederhana, sampai yg kompleks
+4. biasanya kita akan mengunakan tipe data sesuai dengan kebutuhan kolom yg kita buat
+
+========================================================
+
+Tipe data (numbers)
+
+1. secara garis besar tipe data dalam MySQL ada 2:
+   a. intenger(tipe numbers bilanmgan bulat)
+        - TINYINT(1 BITES)
+        - SMALLINT(2 BITES)
+        - MEDIUMINT(3 BITES)
+        - INT(4 BITES)
+        - BIGINT(8 BITES DLL)
+   b. floating point(tipe data numbers pecahan)
+        - FLOAT
+        - DOUBLE
+
+    C. DECIMAL
+        - tipe data khusus yg bisa kita tentukan jumlah
+        precision(diawal koma) dan scale nya (jml di akhir koma nya)
+
+===========================================================
+Tipe data string ??????
+
+1. pertama tipe data MySQL adl CHAR & VARCHAR
+2. kita bisa menetukan jml maximal panjang karacter yg bisa ditampung oleh char dan varchar dengan mengunakan kurung buka lalu masukan jumlah karacter dan diakhiri kurung tutup
+3. misal, char(10) atau varchar(10) artinya tipe dengan maximal jml karacternya adl 10
+4. maximum ukuran char atau varchar adalah 65535 karacter 
+
+peredaan diatas terkait cara menyimpanya
+=> char = chracter(harus ditentukan)
+=> varchar = variabel chracter(flexiel)
+===========================================================
+
+tipe data date and time
+
+1. selain tipe data numers and string, biasanya kadang kita sering menyimpan data waktu atau tangal
+2. sebenarnya bisa kita gunakan string untuk menyimpan data waktu atau tgl, namun itu tidak direcomendaesikan, karena akan menyulitkan kita ketika nanti butuh melakukan manipulasi waktu atau tgl di   MySQL
+
+JENIS2 TIPE DATA DATE DAN TIME
+- DATE              : YYYY-MM-DD
+- DATETIME          : YYYY-MM-DD HH:MM:SS
+- TIMESTEMP         : YYYY-MM-DD HH:MM:SS
+- TIME              : HH:MM:SS
+- YEAR              : YYYY
+
+=========================================================
+Tipe data boolean!!!
+1. true and false
+
+==========================================================
+
+Table??
+1. data biasanya disimpan dalam sebuah table di MySQL
+2. tiap tabel biasanya menyimpan satu jenis data, misal ketika membuat aplikasi toko online kita akan membuat tabel barang, tabel pelanggan dll
+3. sebelum kita bisa memasukan data ke table, kita wajib menentukan kolom2nya 
+4. kita juga bisa mengubah table yg sudah terlanjur kita buat, seperti menmbah kolom baru dll.
+
+=========================================================
+
+storange engine????
+1. MySQL memiliki berbagai cara melakukan pengelolaan data, hal ini disebut storange engine
+2. saat ini, yg biasa digunakan adl innoDB
+3. untuk melihat storange engines apa saja yg terdapat di MySQL. kita bisa mengunakan perintah: SHOW ENGINES;
+
+==========================================================
+
+Melihat Table ( USE SHOW TABLES )

@@ -1,0 +1,46 @@
+
+<!--//>> DISINI MENGATUR SEMUA TAMPILAN YG ADA DIDALAM  DETAIL <<\\-->
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>detail contact</h2>
+
+            <!-- jika daftar contact tidak ada  -->
+            <!-- ini menampilkan alert serta mengembalikan ke halaman utama contact -->
+            <% if (!contact) { %>
+                <div class="alert alert-danger" role="alert">
+                    data contact tidak ada. <br> <a href="/contact" class="alert-link fw-normal">
+                       &laquo; kembali ke daftar contact</a>
+                  </div>
+
+                  <!-- selain dari itu artinya (ada) maka ambil data dibawah -->
+                  
+            <% } else { %>
+
+            <div class="card" style="width: 18rem;">
+                <!-- nama -->
+                <div class="card-body">
+                  <h5 class="card-title"> <%= contact.nama %></h5>
+                <!-- nohp -->
+                  <h6 class="card-subtitle mb-2 text-muted"> <%= contact.nohp %></h6>
+                <!-- email -->
+                  <p class="card-text"> <%= contact.email %></p>
+
+             <!-- tombol edit -->
+                  <a href="/contact/edit/<%= contact.nama %>" class="btn btn-info badge">ubah</a>
+
+             <!--  tombol delate -->
+             <!-- on click (seriussly pada alert) untuk cornfirmasi-->
+                  <a href="/contact/delete/<%= contact.nama %>" class="btn btn-danger badge" onclick="return confirm('seriuslly?')">hapus</a>
+
+              <!-- TOMBOL KEMBALI kedaftar contact -->
+                  <a href="/contact" class="card-link d-block mt-3">&laquo; comeback list contact.</a>
+                </div>
+                <% } %>
+
+
+              </div>
+        </div>
+    </div>
+</div>

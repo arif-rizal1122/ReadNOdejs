@@ -1,0 +1,16 @@
+{
+  "name": "express_mysqls2",
+  "version": "1.0.0",
+  "description": "beljar_bareng_bg_dea",
+  "main": "app.js",
+  "scripts": {
+    "test": "hello worl"
+  },
+  "author": "arif-rizal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}

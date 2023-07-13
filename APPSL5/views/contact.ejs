@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>daftar contact</h2>
+
+
+          <!-- tombol add data contact -->
+          <a href="/contact/add" class="btn btn-primary mb-2">add data contact</a>
+
+          <!-- ini menampilkan flash jika success -->
+          <!-- jika msg nya tidak sama dgn nol (berarti ada isinya, maka tampilkan pesan dibawah ini) -->
+          <% if (msg.length !== 0) { %>
+            <div class="alert alert-success" role="alert">
+             <%= msg %>
+            </div>
+          <% } %>
+
+            <!-- awal boostrap -->
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">nama</th>
+                    <th scope="col">nomor hp</th>
+                    <th scope="col">action</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                    <!-- ini dibuat dengan contacts.json -->
+                    <% if (contacts.length === 0) { %>
+                        
+                        <tr>
+                            <td colspan="4k">  <div class="alert alert-danger" role="alert">
+                                data contact masih kosong
+                               </div>
+                            </td>
+                        </tr>
+                      
+                    <% } %>
+
+
+                    <% contacts.forEach((contact, i) => { 
+                    i++ %>
+   
+                        <tr>
+                          <th scope="row"> <%=
+                            i++ %></th>
+
+                          <td><%= contact.nama %></td>
+                          <td><%= contact.nohp %></td>
+                          
+                          <td>
+                              <a href="/contact/<%= 
+                            contact.nama %>" class="btn btn-success badge rounded-pill" ><i class="bi bi-info-circle-fill"> </i>detail</a>
+                          </td>
+                        </tr>         
+                    <% }) %>
+
+
+                </tbody>
+              </table>
+              <!-- akhir boostrap-->
+
+        </div>
+    </div>
+</div>
