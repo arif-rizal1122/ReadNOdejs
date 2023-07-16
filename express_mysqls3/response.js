@@ -19,18 +19,45 @@
 //###########################  2 ############################//
 
 
+// const response = (statusCode, data, messange, res) => {
+//   res.json(statusCode, [
+//     {
+//     payload: {
+//       data, 
+//       messange,
+//     },
+//     metadata: {
+//       prev: "",
+//       next: "",
+//       current: "",
+//     },
+//   },
+// ])
+// }
+
+
+// module.exports = response
+
+
+
+
+//###########################  3 ############################//
+
+
+
 const response = (statusCode, data, messange, res) => {
-  res.json(statusCode, [{
+  res.json(statusCode, [
+    {
     payload: {
-      data, 
-      messange,
+    data,  
+    messange,
     },
     metadata: {
       prev: "",
       next: "",
       current: "",
-    }
-  }
+    },
+  },
 ])
 }
 
