@@ -171,10 +171,10 @@ app.post('/dosen', (req, res) => {
         if (err) response(500, 'invalid', 'error', res)
         if (result?.effectedRows) {
             // // format ulang output data
-            // const data = {
-            //     isSuccess: result.affectedRows,
-            //     id: result.InsertId,
-            // }
+            const data = {
+                isSuccess: result.affectedRows,
+                id: result.InsertId,
+            }
             response(200, data, 'data added succesfully from dosen', res)
         }
         // console.log(result)
