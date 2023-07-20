@@ -531,6 +531,7 @@ app.get('/mahasiswa/:id', (req, res) => {
 })
 
 
+
 // post diperuntuhkan untuk mengisert data(biasanya meski bisa melakukakn yg lain) yg bisa menambahkan data ke database
 app.post('/', (req, res) => {
     res.send('succes posting')
