@@ -6,12 +6,9 @@ const port = 3000
 const bodyParser = require('body-parser')
 app.use(bodyParser.json());
 
-
-const routerDosen = require('./models/dosen.js')
-app.use(routerDosen)
-
-const mahasiswa = require('./models/mahasiswa.js')
-app.use(mahasiswa)
+const { allMhs, allDosen } = require('./models/routers.js')
+app.use(allMhs)
+app.use(allDosen)
 
 app.get('/', (req, res) => {
     res.send('ini end point')

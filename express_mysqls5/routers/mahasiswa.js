@@ -1,16 +1,16 @@
 
 
 const express = require('express')
-const router = express.Router()
+const routerMhs = express.Router()
 
 
 // get data 
-router.get('/mahasiswa', (req, res) => {
+routerMhs.get('/mahasiswa', (req, res) => {
     res.send('this get from mahasiswa')
 })
 
 // get data spesific
-router.get('/mahasiswa/:id', (req, res) => {
+routerMhs.get('/mahasiswa/:id', (req, res) => {
     const id = req.params.id
     res.send(`spesific data id mahasiswa: ${id}`)
     console.log(`id : ${id}`)
@@ -18,7 +18,7 @@ router.get('/mahasiswa/:id', (req, res) => {
 
 
 // post tambah data
-router.post('/mahasiswa', (req, res) => {
+routerMhs.post('/mahasiswa', (req, res) => {
     const data = req.body
     res.json({
         message: 'add data succes',
@@ -29,34 +29,35 @@ router.post('/mahasiswa', (req, res) => {
 
 // put - update data
 
-router.put('/mahasiswa/:id', (req, res) => {
+routerMhs.put('/mahasiswa/:id', (req, res) => {
     const dataBody = req.body
     const newid = req.params.id
 
     if (dataBody.id === newid) {
     res.json({
-    //    dataLama: {
-    //     message: 'data lama',
-    //     dataBody
-    //    }, 
+       dataLama: {
+        message: 'data lama',
+        dataBody
+       }, 
 
        dataBaru: {
         message: 'new data',       
         dataBody: {
          newid: `id baru ${newid}`,
          nim: "r",
-         nama_lengkap: "sri ayud",
+         nama_lengkap: "sri ayudty",
          kelas: "ui",
          alamat: "bandung"
         }
-       }       
+       }
     })} else {
-        res.send(404, 'not found')}
+        res.send(404, 'not found')
+    }
 })
 
 
 
-router.delete('/mahasiswa/:id', (req, res) => {  
+routerMhs.delete('/mahasiswa/:id', (req, res) => {  
     const {id} = req.body
     const query = req.params
 
@@ -68,4 +69,4 @@ router.delete('/mahasiswa/:id', (req, res) => {
 })
 
 
-module.exports = router
+module.exports = routerMhs
