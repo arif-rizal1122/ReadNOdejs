@@ -196,7 +196,6 @@ app.put('/mahasiswa', (req, res) => {
     const { nim, nama_lengkap, kelas, alamat } = req.body
 
     const sql = `UPDATE mahasiswa SET nama_lengkap = '${nama_lengkap}', kelas = '${kelas}', alamat = '${alamat}' WHERE nim = ${nim}`
-  
 
     db.query(sql, (err, result) => {
         // console.log(result)

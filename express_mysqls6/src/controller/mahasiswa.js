@@ -6,10 +6,10 @@ const mhsModel = require('../models/mahasiswa')
 const getAllMhs = async (req, res) => {
     try {
      // didistructuring [data]
-    const [data] = await mhsModel.getAllMhs()
+    const [result] = await mhsModel.getAllMhs()
     res.json({
         message: 'get all mahasiswa succes',
-        data: data
+        data: result
     }) 
 
     } catch (error) {
@@ -47,6 +47,7 @@ const getAllMhs = async (req, res) => {
 
 
 
+
 const createNewMhs = async (req, res) => {
     // console.log(req.body)
     const {body} = req;
@@ -78,7 +79,6 @@ const updateDataMhs = async (req, res) => {
     const {idMhs} = req.params
     const {body} = req;
 
-
     try {
         await mhsModel.updateDataMhs(body, idMhs)
     res.json({
@@ -99,6 +99,7 @@ const updateDataMhs = async (req, res) => {
 
 
 // delete - hapus data
+
 
 const deleteMhs = async (req, res) => {
     const {idMhs} = req.params

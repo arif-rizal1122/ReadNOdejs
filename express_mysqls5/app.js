@@ -2,17 +2,16 @@
 
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 4000
+
+// untuk menghandle request body
 const bodyParser = require('body-parser')
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 
-const { allMhs, allDosen } = require('./models/routers.js')
-app.use(allMhs)
-app.use(allDosen)
+const routersMhs = require('./src/routers/mahasiswa')
+app.use('/mahasiswa', routersMhs)
 
-app.get('/', (req, res) => {
-    res.send('ini end point')
-})
+
 
 app.listen(port, (req, res) => {
     console.log(`listenning port try to running ${port}`)

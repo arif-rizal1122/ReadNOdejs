@@ -11,6 +11,7 @@ const express = require('express')
 
 
 const mahasiswaRouters = require('./src/routers/mahasiswa')
+
 const middlewareLogRequest = require('./src/middleware/log')
 const upload = require('./src/middleware/multer')
 
@@ -24,18 +25,24 @@ app.use('/aset',express.static('public/images'))
 
 app.use('/mahasiswa', mahasiswaRouters)
 
+
+
 app.post('/upload',upload.single('photo'), (req, res) => {
     res.json({
         message: 'upload berhasil'
     })
 })
 
-app.use((err, req, next) => {
-    res.json({
-        message: err.message
-    })
-})
-
+// app.use((err, req, next) => {
+//     try {
+//         console.log('ok')
+//     } catch (error) {
+//           res.json({
+//         message: 'server utama error'
+//     }) 
+//     }
+//     next()
+// })
 
 
 app.get('/', (req, res) => {
